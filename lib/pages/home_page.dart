@@ -53,20 +53,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            icon: Image.asset('assets/images/icons/Icon_Notification.png',
-                width: 26.02, height: 26.02),
-            onPressed: () => exit(0),
-          ),
-          IconButton(
-            icon: Image.asset('assets/images/icons/Heart.png',
-                width: 26.02, height: 26.02),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: Center(
+        
         child: Text('Home Page'),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(

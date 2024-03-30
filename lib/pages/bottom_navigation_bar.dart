@@ -13,43 +13,74 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      unselectedItemColor: Color.fromRGBO(152, 163, 179, 1),
+      selectedItemColor: Color.fromRGBO(237, 28, 36, 1),
+      selectedLabelStyle: const TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 10,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+      ),
       type: BottomNavigationBarType.fixed,
       items: [
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
-          icon: selectedIndex == 0
-              ? CustomIcon(imagePath: 'assets/images/icons/selected_home.png')
-              : CustomIcon(imagePath: 'assets/images/icons/unselected_home.png'),
+          icon: new Image.asset('assets/images/Home.png'),
+          activeIcon: new Image.asset('assets/images/selected_Home.png'),
           label: 'Beranda',
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
-          icon: selectedIndex == 1
-              ? CustomIcon(imagePath: 'assets/images/icons/selected_dokter.png')
-              : CustomIcon(imagePath: 'assets/images/icons/unselected_dokter.png'),
+          icon: new Image.asset('assets/images/dokter.png'),
+          activeIcon: new Image.asset('assets/images/selected_dokter.png'),
           label: 'Dokter',
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
-          icon: selectedIndex == 2
-              ? CustomIcon(imagePath: 'assets/images/icons/selected_calender.png')
-              : CustomIcon(imagePath: 'assets/images/icons/unselected_calender.png'),
+          icon: new Image.asset('assets/images/Calendar.png'),
+          activeIcon: new Image.asset('assets/images/selected_Calendar.png'),
           label: 'Reservasi',
         ),
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
-          icon: selectedIndex == 3
-              ? CustomIcon(imagePath: 'assets/images/icons/selected_news.png')
-              : CustomIcon(imagePath: 'assets/images/icons/unselected_news.png'),
+          icon: new Image.asset('assets/images/Document.png'),
+          activeIcon: new Image.asset('assets/images/selected_Document.png'),
           label: 'Riwayat',
         ),
-        BottomNavigationBarItem(
-          backgroundColor: Colors.white,
-          icon: selectedIndex == 4
-              ? CustomIcon(imagePath: 'assets/images/icons/selected_profile.png')
-              : CustomIcon(imagePath: 'assets/images/icons/unselected_profile.png'),
-          label: 'Profile',
-        ),
+        //   icon: selectedIndex == 0
+        //       ? const CustomIcon(imagePath: 'assets/images/selected_Home.png')
+        //       : const CustomIcon(
+        //           imagePath: 'assets/images/Home.png'),
+        //   label: 'Beranda',
+        // BottomNavigationBarItem(
+        //   backgroundColor: Colors.white,
+        //   icon: selectedIndex == 1
+        //       ? const CustomIcon(imagePath: 'assets/images/selected_Document.png')
+        //       : const CustomIcon(
+        //           imagePath: 'assets/images/dokter.png'),
+        //   label: 'Dokter',
+        // ),
+        // BottomNavigationBarItem(
+        //   backgroundColor: Colors.white,
+        //   icon: selectedIndex == 2
+        //       ? const CustomIcon(
+        //           imagePath: 'assets/images/selected_Calendar.png')
+        //       : const CustomIcon(
+        //           imagePath: 'assets/images/Calendar.png'),
+        //   label: 'Reservasi',
+        // ),
+        // BottomNavigationBarItem(
+        //   backgroundColor: Colors.white,
+        //   icon: selectedIndex == 3
+        //       ? const CustomIcon(imagePath: 'assets/images/selected_Document.png')
+        //       : const CustomIcon(
+        //           imagePath: 'assets/images/Document.png'),
+        //   label: 'Riwayat',
+        // ),
       ],
       currentIndex: selectedIndex,
       onTap: onItemTapped,

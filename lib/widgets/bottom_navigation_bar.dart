@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telkomedika_app/custom_icon.dart';
+import 'package:telkomedika_app/widgets/custom_icon.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int selectedIndex;
@@ -26,6 +26,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         fontWeight: FontWeight.w400,
       ),
       type: BottomNavigationBarType.fixed,
+      elevation: 0.0,
       items: [
         BottomNavigationBarItem(
           backgroundColor: Colors.white,
@@ -87,3 +88,4 @@ class CustomBottomNavigationBar extends StatelessWidget {
     );
   }
 }
+

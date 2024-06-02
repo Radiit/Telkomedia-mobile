@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:telkomedika_app/widgets/custom_icon.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int selectedIndex;
@@ -52,40 +51,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
           activeIcon: new Image.asset('assets/images/selected_Document.png'),
           label: 'Riwayat',
         ),
-        //   icon: selectedIndex == 0
-        //       ? const CustomIcon(imagePath: 'assets/images/selected_Home.png')
-        //       : const CustomIcon(
-        //           imagePath: 'assets/images/Home.png'),
-        //   label: 'Beranda',
-        // BottomNavigationBarItem(
-        //   backgroundColor: Colors.white,
-        //   icon: selectedIndex == 1
-        //       ? const CustomIcon(imagePath: 'assets/images/selected_Document.png')
-        //       : const CustomIcon(
-        //           imagePath: 'assets/images/dokter.png'),
-        //   label: 'Dokter',
-        // ),
-        // BottomNavigationBarItem(
-        //   backgroundColor: Colors.white,
-        //   icon: selectedIndex == 2
-        //       ? const CustomIcon(
-        //           imagePath: 'assets/images/selected_Calendar.png')
-        //       : const CustomIcon(
-        //           imagePath: 'assets/images/Calendar.png'),
-        //   label: 'Reservasi',
-        // ),
-        // BottomNavigationBarItem(
-        //   backgroundColor: Colors.white,
-        //   icon: selectedIndex == 3
-        //       ? const CustomIcon(imagePath: 'assets/images/selected_Document.png')
-        //       : const CustomIcon(
-        //           imagePath: 'assets/images/Document.png'),
-        //   label: 'Riwayat',
-        // ),
       ],
       currentIndex: selectedIndex,
       onTap: onItemTapped,
     );
   }
 }
-

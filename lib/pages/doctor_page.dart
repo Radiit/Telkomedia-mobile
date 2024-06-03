@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'doctor_detail_page.dart';
 import '../widgets/doctor_recommendation_widget.dart';
 
 class DoctorPage extends StatefulWidget {
@@ -73,20 +74,26 @@ class _DoctorPageState extends State<DoctorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Lakukan Reservasi',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Align(
-              alignment: Alignment.centerLeft, // Sesuaikan dengan kebutuhan
-              child: Text(
-                'Lakukan Reservasi',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              'Lakukan Reservasi',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 20),
@@ -103,11 +110,21 @@ class _DoctorPageState extends State<DoctorPage> {
               child: ListView(
                 children: doctors
                     .where((doctor) => doctor['poli'] == selectedPoli)
-                    .map((doctor) => DoctorRecommendationCard(
-                          name: doctor['name'],
-                          department: doctor['department'],
-                          rating: doctor['rating'],
-                          imagePath: doctor['imagePath'],
+                    .map((doctor) => GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DoctorDetailPage(doctor: doctor),
+                              ),
+                            );
+                          },
+                          child: DoctorRecommendationCard(
+                            name: doctor['name'],
+                            department: doctor['department'],
+                            rating: doctor['rating'],
+                            imagePath: doctor['imagePath'],
+                          ),
                         ))
                     .toList(),
               ),

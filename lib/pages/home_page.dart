@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:telkomedika_app/widgets/reservation_widget.dart';
 import '../widgets/doctor_recommendation_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   static const TextStyle textStyle = TextStyle(
@@ -12,14 +12,21 @@ class HomePage extends StatelessWidget {
   );
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            leading: const Icon(
-              Icons.person,
-              color: Colors.black,
+            leading: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/Adiwijaya.png'),
+              ),
             ),
             foregroundColor: Colors.black,
             backgroundColor: Colors.white,
@@ -78,25 +85,20 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                ReservationCard(), // Use ReservationCard widget here
+                ReservationCard(),
                 const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Antrian Poli',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Antrian Poli',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -147,7 +149,6 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
                 DoctorRecommendationCard(
                   name: "dr. Budi Raharja",
                   department: "Poli Umum",
@@ -183,16 +184,16 @@ class PoliCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100, // Adjust the width as necessary to fit within the screen
+      width: 100,
       child: Column(
         children: [
-          Image.asset(imagePath, width: 100, height: 65), // Adjust the width to match the container
+          Image.asset(imagePath, width: 100, height: 65),
           const SizedBox(height: 5),
           Text(
             title,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xFF101828),
+              color: Colors.black,
               fontSize: 14,
               fontWeight: FontWeight.bold,
             ),

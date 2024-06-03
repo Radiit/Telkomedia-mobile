@@ -15,7 +15,7 @@ class ReservationCard extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          height: 139, // Specify the height
+          height: 139,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
@@ -51,7 +51,7 @@ class ReservationCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 25, // Adjust the radius as needed
+                          radius: 25,
                           backgroundImage: AssetImage('assets/images/doctor.png'), // Replace with the actual image path
                         ),
                         const SizedBox(width: 10),
@@ -84,7 +84,7 @@ class ReservationCard extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(237, 58, 83, 1), // Changed background color
+                            color: Color.fromRGBO(237, 58, 83, 1), 
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
@@ -109,7 +109,7 @@ class ReservationCard extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(237, 58, 83, 1), // Changed background color
+                            color: Color.fromRGBO(237, 58, 83, 1), 
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
